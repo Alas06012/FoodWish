@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61004317-A1DD-41B8-ABD1-9AEDDCE0872F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FoodWish</RootNamespace>
+    <AssemblyName>FoodWish</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="MaterialDesignColors, Version=2.0.3.2, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.3\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.2.1.2, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.2.1\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="sapbusinessobjects.wpf.viewer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Licensing, Version=19.3460.0.48, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.19.3.0.48\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CapaDatos\DatosCarrito.cs" />
+    <Compile Include="CapaDatos\DatosComida.cs" />
+    <Compile Include="CapaDatos\DatosFactura.cs" />
+    <Compile Include="CapaDatos\DatosMesa.cs" />
+    <Compile Include="CapaDatos\DatosMetodoPago.cs" />
+    <Compile Include="CapaDatos\DatosTipoComida.cs" />
+    <Compile Include="CapaDatos\DatosUsuarios.cs" />
+    <Compile Include="CapaEntidades\EntidadesCarrito.cs" />
+    <Compile Include="CapaEntidades\EntidadesComida.cs" />
+    <Compile Include="CapaEntidades\EntidadesEstadoMesa.cs" />
+    <Compile Include="CapaEntidades\EntidadesFactura.cs" />
+    <Compile Include="CapaEntidades\EntidadesMesa.cs" />
+    <Compile Include="CapaEntidades\EntidadesMetodoPago.cs" />
+    <Compile Include="CapaEntidades\EntidadesTipoComida.cs" />
+    <Compile Include="CapaEntidades\EntidadesUsuarios.cs" />
+    <Compile Include="MessageBoxCustom.xaml.cs">
+      <DependentUpon>MessageBoxCustom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuariosModel.cs" />
+    <Compile Include="Reportss\FacturaSeleccionada.xaml.cs">
+      <DependentUpon>FacturaSeleccionada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reportss\MasVendido.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MasVendido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportss\rptFactSeleccionada.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFactSeleccionada.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportss\rptVentasTotales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptVentasTotales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\DatosUsuarios.cs" />
+    <Compile Include="VentanaMantenimientos.xaml.cs">
+      <DependentUpon>VentanaMantenimientos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Area_Admin.xaml.cs">
+      <DependentUpon>Area_Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CRUDCOMIDA.xaml.cs">
+      <DependentUpon>CRUDCOMIDA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CRUDMESAS.xaml.cs">
+      <DependentUpon>CRUDMESAS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CRUDMETODOPAGO.xaml.cs">
+      <DependentUpon>CRUDMETODOPAGO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CRUDTIPOCOMIDA.xaml.cs">
+      <DependentUpon>CRUDTIPOCOMIDA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\CRUDUSUARIOS.xaml.cs">
+      <DependentUpon>CRUDUSUARIOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Elec_Mesa.xaml.cs">
+      <DependentUpon>Elec_Mesa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Nuevo_Usuario.xaml.cs">
+      <DependentUpon>Nuevo_Usuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pago.xaml.cs">
+      <DependentUpon>Pago.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pedido.xaml.cs">
+      <DependentUpon>Pedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Recuperacion.xaml.cs">
+      <DependentUpon>Recuperacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\registro_admin.xaml.cs">
+      <DependentUpon>registro_admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Reportes.xaml.cs">
+      <DependentUpon>Reportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Ventana_Acceso_Usuario.xaml.cs">
+      <DependentUpon>Ventana_Acceso_Usuario.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MessageBoxCustom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reportss\FacturaSeleccionada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaMantenimientos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Area_Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\CRUDCOMIDA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\CRUDMESAS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\CRUDMETODOPAGO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\CRUDTIPOCOMIDA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\CRUDUSUARIOS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Elec_Mesa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Nuevo_Usuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Pago.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Pedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Recuperacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\registro_admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Reportes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Ventana_Acceso_Usuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportss\MasVendido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MasVendido.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportss\rptFactSeleccionada.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFactSeleccionada.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportss\rptVentasTotales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptVentasTotales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo_FoodWish.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Besafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vistas\imagen_2021-10-26_231254.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vistas\imagen_2021-10-26_231254.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vistas\imagen_2021-10-26_231254 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vistas\go_back_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="comida_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="comida_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_food_truck_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_users_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_rent_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_Edit_Pie_Chart_Report_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_coffee_table_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8_settings_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,76 @@
+﻿<Window x:Class="FoodWish.MessageBoxCustom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MessageBoxWindow" Height="197.779" Width="327.972" 
+        WindowStartupLocation="CenterScreen" WindowStyle="None" Background="White" 
+        Topmost="True" ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="10"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"        
+        FontFamily="{DynamicResource MaterialDesignFont}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <materialDesign:Card x:Name="cardHeader" Grid.Row="0" Padding="0" Margin="-3,-2,-4,10" materialDesign:ShadowAssist.ShadowDepth="Depth5"   Background="#FF26282B" Visibility="Visible" MouseDown="cardHeader_MouseDown">
+            <StackPanel>
+                <TextBlock x:Name="txtTitle" HorizontalAlignment="Center" VerticalAlignment="Stretch" Style="{DynamicResource MaterialDesignHeadline5TextBlock}" FontSize="15" Foreground="#FF797979" Margin="120,6,120.2,0" Height="19" ><Run Text="Message Title"/></TextBlock>
+            </StackPanel>
+        </materialDesign:Card>
+        <StackPanel  HorizontalAlignment="Right"  VerticalAlignment="Top" Height="30" Width="34">
+            <Button x:Name="btnClose" Click="btnClose_Click" Padding="0" Width="Auto" Height="32" Content="🞪" Foreground="Gray" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-1.4,0" MouseEnter="btnClose_MouseEnter" MouseLeave="btnClose_MouseLeave">
+                
+            </Button>
+        </StackPanel>
+        <Grid Background="#2F3136" Margin="0,30,-0.4,-0.6" Grid.RowSpan="2">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <materialDesign:TransitioningContent Foreground="#DD000000">
+                        <materialDesign:TransitioningContent.OpeningEffects >
+                            <materialDesign:TransitionEffect Kind="FadeIn" />
+                            <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
+                        </materialDesign:TransitioningContent.OpeningEffects>
+                        <TextBox x:Name="txtMessage" HorizontalAlignment="Center" IsReadOnly="True" Grid.Row="0" Margin="5" materialDesign:HintAssist.Hint="" FontSize="18" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+                    </materialDesign:TransitioningContent>
+
+                </Grid>
+                <Grid Grid.Row="1" Margin="0,20,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnOk" Click="btnOk_Click" Grid.Column="1" Style="{StaticResource MaterialDesignRaisedButton}" Margin="5" Width="100" Content="OK" ToolTip="Ok"/>
+                    <Button x:Name="btnCancel" Click="btnCancel_Click" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" Margin="5" Width="100" Content="Cancel" ToolTip="Cancel"/>
+                    <Button x:Name="btnYes" Click="btnYes_Click" Grid.Column="1" Style="{StaticResource MaterialDesignRaisedButton}" Margin="5" Width="100" Content="Si" ToolTip="Yes" Background="#FFEB8484" BorderBrush="#FFEB8484"/>
+                    <Button x:Name="btnNo" Click="btnNo_Click" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedButton}" Margin="5" Width="100" Content="No" ToolTip="No" Background="#FFEB8484" BorderBrush="#FFEB8484"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

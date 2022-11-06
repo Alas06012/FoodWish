@@ -1,0 +1,194 @@
+﻿<Window x:Class="FoodWish.VentanaMantenimientos"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodWish"
+        xmlns:vistas="clr-namespace:FoodWish.Vistas" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750.644" Width="1050.291" MinHeight="750.644" MinWidth="1050.291"
+     Background="#36393F"
+     WindowStyle="None"
+     ResizeMode="CanResizeWithGrip"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="2" Background="#252525" 
+                MouseDown="Border_MouseDown" Margin="0,0,0.4,0" Height="35" VerticalAlignment="Top">
+
+
+            <Grid HorizontalAlignment="Stretch" Margin="0,0,0.4,0.2">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" >
+                    <Image Source="icons8_settings_32.png" Margin="10,4,0,6.2" Width="19" />
+                    <Label Content="Mantenimientos"
+                   Foreground="Gray"
+                   FontWeight="SemiBold"
+                       Margin="0,5,0,0.2"
+                       
+                       />
+
+                </StackPanel>
+
+
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Width="96">
+
+                    <Button x:Name="btnMinimizar" Width="32" Height="Auto" Padding="0" Content="—" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold" BorderBrush="{x:Null}"
+                            FontSize="11" Margin="0,0,0,0.2" Click="btnMinimizar_Click" 
+                            MouseEnter="btnMinimizar_MouseEnter" MouseLeave="btnMinimizar_MouseLeave" />
+
+                    <Button x:Name="btnMaximizar" Width="32" Height="Auto" Padding="0" Content="▢"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold" BorderBrush="{x:Null}" Margin="0,0,0,0.2" Click="btnMaximizar_Click" MouseEnter="btnMaximizar_MouseEnter" MouseLeave="btnMaximizar_MouseLeave"/>
+
+                    <Button x:Name="btnCerrar" Width="32" Height="Auto" Padding="0" Content="🞪"
+                            FontSize="17"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            Margin="0,0,0,0.2"
+                            BorderBrush="{x:Null}" Click="btnCerrar_Click" MouseEnter="btnCerrar_MouseEnter" MouseLeave="btnCerrar_MouseLeave"/>
+
+
+
+
+
+                </StackPanel>
+            </Grid>
+
+
+
+
+        </Border>
+
+        <Grid Background="#2F3136" Margin="0,35,0,0.4" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="88.8"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Fill="#26282B" HorizontalAlignment="Left" Height="115" Margin="-42,2.2,0,-28.4" Stroke="#FF26282B" VerticalAlignment="Top" Width="242" RadiusY="41.1" RadiusX="41.1" Grid.Row="1"/>
+
+            <StackPanel Margin="0,0,0,88.6" Grid.RowSpan="2">
+                <Button x:Name="btnMesas" Background="Transparent"
+                    BorderBrush="Transparent"
+                     VerticalAlignment="Top" 
+                        MouseEnter="btnMesas_MouseEnter" 
+                        MouseLeave="btnMesas_MouseLeave" 
+                        Height="66" 
+                        Click="btnMesas_Click"
+                       >
+
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" >
+                        <Image Height="25" Source="icons8_coffee_table_32.png" Width="46"/>
+                        <Label Content="Mesas" FontWeight="SemiBold" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+
+                <Button x:Name="btnComidas" Background="Transparent"
+                    BorderBrush="Transparent"
+                     VerticalAlignment="Top" Height="66" MouseEnter="btnComidas_MouseEnter" MouseLeave="btnComidas_MouseLeave" Click="btnComidas_Click" HorizontalContentAlignment="Center" Padding="0,4,16,4">
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" >
+                        <Image Height="25" Source="comida_32.png" Width="46"/>
+                        <Label Content="Comida" FontWeight="SemiBold" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+
+                </Button>
+
+
+                <Button  x:Name="btnTipoComida" Background="Transparent"
+                    BorderBrush="Transparent"
+                   VerticalAlignment="Bottom" Height="66" MouseEnter="btnTipoComida_MouseEnter" MouseLeave="btnTipoComida_MouseLeave" Click="btnTipoComida_Click">
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" >
+                        <Image Height="25" Source="icons8_food_truck_32.png" Width="46"/>
+                        <Label Content="Tipo de Comida" FontWeight="SemiBold" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnUsuarios" Background="Transparent"
+                    BorderBrush="Transparent"
+                    VerticalAlignment="Bottom" Height="66" MouseEnter="btnUsuarios_MouseEnter" MouseLeave="btnUsuarios_MouseLeave" Click="btnUsuarios_Click">
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" >
+                        <Image Height="25" Source="icons8_users_32.png" Width="46"/>
+                        <Label Content="Usuarios" FontWeight="SemiBold" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnMetodo" Background="Transparent"
+                    BorderBrush="Transparent"
+                     VerticalAlignment="Bottom" Height="66" Click="btnMetodo_Click" MouseEnter="btnMetodo_MouseEnter" MouseLeave="btnMetodo_MouseLeave">
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" >
+                        <Image Height="25" Source="icons8_rent_32.png" Width="46"/>
+                        <Label Content="Métodos de Pago" FontWeight="SemiBold" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnReportes" Background="Transparent"
+                    BorderBrush="Transparent"
+                    VerticalAlignment="Bottom" Height="66" Click="btnReportes_Click" MouseEnter="btnReportes_MouseEnter" MouseLeave="btnReportes_MouseLeave" >
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" >
+                        <Image Height="25" Source="icons8_Edit_Pie_Chart_Report_32.png" Width="46"/>
+                        <Label Content="Reportes" FontWeight="SemiBold" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+
+
+            </StackPanel>
+
+
+
+            <Label Content="Administrador" HorizontalAlignment="Left" Margin="72,21.2,0,0" Grid.Row="1" VerticalAlignment="Top"
+                   Foreground="Gray"
+                   FontWeight="SemiBold" Height="24" Width="86"
+                      />
+
+            <Button x:Name="btnADmin" Style="{DynamicResource MaterialDesignFloatingActionLightButton}" Content="{materialDesign:PackIcon Kind=User, Size=30}"  HorizontalAlignment="Left" Margin="28,21.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="39" Height="39" RenderTransformOrigin="0.5,0.5" Background="#FFEB8484" BorderBrush="#FFEB8484">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.385"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Padding="0" Style="{DynamicResource MaterialDesignToolButton}" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="71,38.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="91" Height="25" Click="Button_Click" Foreground="#FFEB8484"/>
+
+        </Grid>
+
+
+
+        <Grid x:Name="StackVENTANAS" Grid.Column="1" Margin="7,6.2,5.4,4.8" Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+
+
+
+    </Grid>
+
+</Window>

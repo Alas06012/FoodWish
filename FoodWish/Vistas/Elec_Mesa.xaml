@@ -1,0 +1,38 @@
+﻿<Window x:Class="FoodWish.Vistas.Elec_Mesa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodWish.Vistas"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Elec_Mesa" Height="511.588" Width="894.304"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,4,0.6" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="792"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="txtid_sesion" materialDesign:HintAssist.Hint="id de sesion" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Margin="150,10,554,386" Visibility="Hidden"/>
+        <TextBox x:Name="txtestado_mesa" materialDesign:HintAssist.Hint="estado" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Margin="232,47,502,349" Visibility="Hidden"/>
+        <TextBox x:Name="txtid_mesa" materialDesign:HintAssist.Hint="id de mesa" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Margin="188,47,581,349" Visibility="Hidden"/>
+        <Image HorizontalAlignment="Left" Height="92" Margin="4,5,0,0" VerticalAlignment="Top" Width="141" Source="/FoodWish;component/Logo_FoodWish.jpg"/>
+        <Label Content="Por favor, Elija una mesa" Margin="295,38,262.8,0" VerticalAlignment="Top" Height="36" FontSize="20" FontFamily="Segoe UI Emoji" FontWeight="Bold"/>
+        <StackPanel Margin="0,102,-152.2,10">
+            <StackPanel Height="394" Margin="0,0,10.8,0" HorizontalAlignment="Right" Width="392">
+                <TextBox x:Name="txtNum_mesa" materialDesign:HintAssist.Hint="Numero de Mesa" Height="23" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Margin="20,50,144.8,0"/>
+                <Button Margin="45,30,173.8,0" x:Name="btnSeleccionar" Content="Seleccionar Mesa" BorderBrush="#FFEB8484" Background="#FFEB8484" Height="57" Click="btnSeleccionar_Click"/>
+                <Button Margin="45,30,173.8,0" x:Name="btnRegresar" Content="Regresar" BorderBrush="#FFEB8484" Background="#FFEB8484" Height="36" Click="btnRegresar_Click" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10,-400,407.8,0" Height="615" RenderTransformOrigin="0.5,0.5" >
+                <DataGrid x:Name="dgMesa" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Height="616" Margin="0,0,10.2,0" SelectionChanged="dgMesa_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id_mesa" Binding="{Binding IdMesa}"/>
+                        <DataGridTextColumn Header="Numero Mesa" Binding="{Binding Numero_mesa}"/>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding IdEstado_mesa}"/>
+                        <DataGridTextColumn Header="usuario" Binding="{Binding IdUsuario}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

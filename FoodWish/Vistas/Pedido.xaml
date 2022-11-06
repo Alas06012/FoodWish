@@ -1,0 +1,139 @@
+﻿<Window x:Class="FoodWish.Vistas.Pedido"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodWish.Vistas"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
+        mc:Ignorable="d"
+        Title="Pedido" Height="750.644" Width="1050.291" MinHeight="750.644" MinWidth="1050.291">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="81" Margin="4,5,0,0" VerticalAlignment="Top" Width="108" Source="/FoodWish;component/Logo_FoodWish.jpg"/>
+        <Label Content="Haga su pedido" Margin="323,27,576,0" VerticalAlignment="Top" Height="33" FontSize="18" FontFamily="Segoe UI Emoji" FontWeight="Bold" HorizontalAlignment="Center" Width="145" Foreground="#FFE81515"/>
+        <Label Content="Tu carrito: $" Margin="0,27,268,0" VerticalAlignment="Top" Height="33" FontSize="18" FontFamily="Segoe UI Emoji" FontWeight="Bold" HorizontalAlignment="Right" Width="112" Foreground="#FFE81515"/>
+        <Label x:Name="lblCalculo" Content="0.0" Margin="0,27,184,0" VerticalAlignment="Top" Height="33" FontSize="18" FontFamily="Segoe UI Emoji" FontWeight="Bold" HorizontalAlignment="Right" Width="94" Foreground="#FFE81515"/>
+
+        <StackPanel Margin="0,66,-0.4,0">
+
+            <StackPanel Height="654">
+                <TextBox 
+                    x:Name="txtNombre"
+                    materialDesign:HintAssist.Hint="Nombre"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Margin="20,10,0,0" HorizontalAlignment="Left" Width="170" Height="34" IsEnabled="False"/>
+                <TextBox 
+                    x:Name="txtDescripcion"
+                    materialDesign:HintAssist.Hint="Descripcion"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Margin="20,0,0,0" HorizontalAlignment="Left" Width="170" Height="49" IsEnabled="False"/>
+                <TextBox 
+                    x:Name="txtPrecio"
+                    materialDesign:HintAssist.Hint="Precio"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Margin="20,0,0,0" HorizontalAlignment="Left" Width="58" Height="40" IsEnabled="False"/>
+                <TextBox 
+                    x:Name="txtCantidad"
+                    materialDesign:HintAssist.Hint="Cantidad"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    Margin="20,0,0,0" HorizontalAlignment="Left" Width="58" Height="39"/>
+                <Button Margin="210,-270,0,0" x:Name="btnAgregar" Content="Agregar" BorderBrush="#FFEB8484" Background="#FFEB8484" Click="btnAgregar_Click" IsEnabled="False" HorizontalAlignment="Left" Width="94"/>
+                <Button Margin="210,-155,0,0" x:Name="btnEliminar" Content="Eliminar" BorderBrush="#FFEB8484" Background="#FFEB8484" RenderTransformOrigin="0.478,-0.281" Click="btnEliminar_Click" IsEnabled="False" HorizontalAlignment="Left" Width="94"/>
+                <Button Margin="210,-40,0,0" x:Name="btnEditar" Content="Editar" BorderBrush="#FFEB8484" Background="#FFEB8484" Click="btnEditar_Click" IsEnabled="False" HorizontalAlignment="Left" Width="94"/>
+                <StackPanel Margin="309,-155,10,0" Height="310" VerticalAlignment="Top">
+                    <DataGrid x:Name="dgCarrito" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Height="296" Margin="10,0,9.8,0" SelectionChanged="dgCarrito_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="IdCarrito" Binding="{Binding Id_Carrito}" Width="89" />
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Nom_Comida}" Width="89" />
+                            <DataGridTextColumn Header="IdComida" Binding="{Binding Comida_Car}" Width="89"/>
+                            <DataGridTextColumn Header="Usuario" Binding="{Binding Usuario_Car}" Width="89"/>
+                            <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad_Car}" Width="89"/>
+                            <DataGridTextColumn Header="Precio" Binding="{Binding Precio_Car}" Width="68"/>
+                            <DataGridTextColumn Header="IdFactura" Binding="{Binding Fact_DetFact}" Width="60"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="20,-10,321,14" Height="317" >
+                    <TabControl Height="310" Margin="0,0,10.2,0">
+                        <TabItem Header="Platos">
+                            <DataGrid x:Name="dgPlatos" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0.2,5.4" SelectionChanged="dgPlatos_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="IdComida" Binding="{Binding IdComida}" />
+                                    <DataGridTextColumn Header="Nombre Comida" Binding="{Binding Nombre}" />
+                                    <DataGridTextColumn Header="Descripcion Comida" Binding="{Binding Descripcion}" />
+                                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                        <TabItem Header="Bebidas">
+                            <DataGrid x:Name="dgBebidas" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" RenderTransformOrigin="0.5,0.5" SelectionChanged="dgBebidas_SelectionChanged">
+                                <DataGrid.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="0.045"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </DataGrid.RenderTransform>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="IdBebida" Binding="{Binding IdComida}" />
+                                    <DataGridTextColumn Header="Nombre Bebida" Binding="{Binding Nombre}" />
+                                    <DataGridTextColumn Header="Descripcion Bebida" Binding="{Binding Descripcion}" />
+                                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                        <TabItem Header="Complementos">
+                            <DataGrid x:Name="dgComplementos" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,69,29" SelectionChanged="dgComplementos_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="IdComplemento" Binding="{Binding IdComida}" />
+                                    <DataGridTextColumn Header="Nombre Complemento" Binding="{Binding Nombre}" />
+                                    <DataGridTextColumn Header="Descripcion Complemento" Binding="{Binding Descripcion}" />
+                                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                        <TabItem Header="Postres">
+                            <DataGrid x:Name="dgPostres" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgPostres_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="IdPostre" Binding="{Binding IdComida}" />
+                                    <DataGridTextColumn Header="Nombre Postre" Binding="{Binding Nombre}" />
+                                    <DataGridTextColumn Header="Descripcion Postre" Binding="{Binding Descripcion}" />
+                                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+                <Button Margin="0,-450,35,0" x:Name="btnPagar" Content="Realizar Pago" BorderBrush="#FFEB8484" Background="#FFEB8484" Click="btnPagar_Click" IsEnabled="False" HorizontalAlignment="Right" Width="227" Height="47"/>
+                <Button Margin="0,-290,35,0" x:Name="btnCerrarSesion" Content="Cerrar Sesion" BorderBrush="#FFEB8484" Background="#FFEB8484" Height="47" Click="btnCerrarSesion_Click" HorizontalAlignment="Right" Width="227"/>
+                <Button Margin="20,-440,0,0" x:Name="btnGenerarFactura" Content="Generar Factura"  Height="47" BorderBrush="#FFEB8484" Background="#FFEB8484" VerticalAlignment="Top" Click="btnGenerarFactura_Click" HorizontalAlignment="Left" Width="263" />
+
+            </StackPanel>
+        </StackPanel>
+
+        <TextBox 
+            x:Name="txtid_sesion"
+            Margin="758,383,0,10" HorizontalAlignment="Left" Width="16" Visibility="Hidden"/>
+        <TextBox 
+            x:Name="txtid_comida"
+            Margin="623,271,0,122" HorizontalAlignment="Left" Width="11" Visibility="Hidden"/>
+        <TextBox 
+            x:Name="txtid_factura"
+            Margin="653,271,0,122" HorizontalAlignment="Left" Width="11" Visibility="Hidden"/>
+        <TextBox 
+            x:Name="txtid_carrito"
+            Margin="758,271,0,122" HorizontalAlignment="Left" Width="16" Visibility="Hidden"/>
+        <TextBox 
+            x:Name="txtcant_edit"
+            Margin="704,271,0,122" HorizontalAlignment="Left" Width="12" Visibility="Hidden"/>
+        <TextBox 
+            x:Name="txtpre_edit"
+            Margin="731,271,0,122" HorizontalAlignment="Left" Width="12" Visibility="Hidden"/>
+        <TextBox 
+            x:Name="txtid_mesa"
+            Margin="623,383,0,10" HorizontalAlignment="Left" Width="12" Visibility="Hidden"/>
+
+
+    </Grid>
+</Window>

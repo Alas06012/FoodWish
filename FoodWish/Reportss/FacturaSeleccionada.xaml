@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodWish.Reportss"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="FoodWish.Reportss.FacturaSeleccionada"
+        mc:Ignorable="d"
+        Title="FacturaSeleccionada" Height="474.126" Width="810.49">
+    <Grid>
+
+        <Viewer:CrystalReportsViewer x:Name="RptViewer" Margin="0,0,0,-0.2" EnableToolTips="True" ShowToolbar="True" ShowToggleSidePanelButton="False" ShowStatusbar="True" ShowSearchTextButton="False" ShowRefreshButton="True" ShowPrintButton="True" ShowPrevPageButton="True" ShowLogo="False" ShowGoToPageButton="True" ShowExportButton="True" ToggleSidePanel="None"/>
+
+    </Grid>
+</Window>

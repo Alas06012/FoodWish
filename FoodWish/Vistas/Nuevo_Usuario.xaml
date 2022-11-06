@@ -1,0 +1,113 @@
+﻿<Window x:Class="FoodWish.Vistas.Nuevo_Usuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodWish.Vistas"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"   
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        mc:Ignorable="d"
+        Title="Registro" Height="518.4" Width="958.4">
+    <Grid Margin="0,0,-6,-0.8">
+
+        <StackPanel Height="144" Margin="-39,344,0,0" Width="127" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Image HorizontalAlignment="Left" Height="165" Margin="-47,0,-60.2,0" VerticalAlignment="Top" Width="212" Source="imagen_2021-10-26_231254 (1).png" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-450.342"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </StackPanel>
+
+        <Image HorizontalAlignment="Left" Height="731" Margin="735,287,-66,-528.4" VerticalAlignment="Top" Width="289" Source="imagen_2021-10-26_231254 (1).png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-450.342"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Rectangle Height="250" Fill="White" VerticalAlignment="Bottom" Margin="38,0,40,101.6" RadiusX="10" RadiusY="10">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Color="#FFBBBBBB" Direction="0" RenderingBias="Quality" ShadowDepth="1"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Image HorizontalAlignment="Left" Height="73" Margin="10,10,0,0" VerticalAlignment="Top" Width="134" Source="/FoodWish;component/Logo_FoodWish.jpg"/>
+        <Label Content="Bienvenido a FoodWish" HorizontalAlignment="Left" Margin="334,50,0,0" VerticalAlignment="Top" Height="44" Width="249" FontSize="22" FontFamily="Segoe UI Emoji" FontWeight="Bold"/>
+        <TextBox x:Name="txt_nom_usuario" 
+            Margin="67,140,612,296.6" 
+            FontFamily="Champagne &amp; Limousines"
+            materialDesign:HintAssist.Hint="Nombre de Usuario                  "
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            materialDesign:ColorZoneAssist.Mode="Custom"
+            materialDesign:ColorZoneAssist.Background="Red"
+            materialDesign:ColorZoneAssist.Foreground="Red"
+                 
+                 
+                    />
+        <PasswordBox x:Name="txt_Clave" 
+            Margin="67,211,612,220.6" 
+            FontFamily="Champagne &amp; Limousines"
+            materialDesign:HintAssist.Hint="Contraseña"
+            Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                    />
+        <PasswordBox x:Name="txt_clave_repetir" 
+            Margin="67,293,612,141.6" 
+            FontFamily="Champagne &amp; Limousines"
+            materialDesign:HintAssist.Hint="Repita su Contraseña"
+            Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                    />
+        <ComboBox x:Name="cmb_pregunta" HorizontalAlignment="Left" Margin="645,159,0,0" VerticalAlignment="Top" Width="223"/>
+        <Label Content="Seleccione una pregunta" HorizontalAlignment="Left" Margin="487,159,0,0" VerticalAlignment="Top" Height="31" Width="140"/>
+        <Label Content="Respuesta" HorizontalAlignment="Left" Margin="558,228,0,0" VerticalAlignment="Top" FontSize="13"/>
+        <Button x:Name="btn_registrar" Content="Registrarse" HorizontalAlignment="Left" Margin="672,293,0,0" VerticalAlignment="Top" Width="135" Height="44" BorderBrush="#FFEB8484" Background="#FFEB8484" Click="btn_registrar_Click"/>
+        <TextBox x:Name="txt_respuesta" 
+            Margin="645,208,89,234.6" 
+            FontFamily="Champagne &amp; Limousines"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            materialDesign:ColorZoneAssist.Mode="Custom"
+            materialDesign:ColorZoneAssist.Background="Red"
+            materialDesign:ColorZoneAssist.Foreground="Red"
+                 
+                 
+                    />
+        <Button x:Name="btn_regresar" Content="" HorizontalAlignment="Left" Margin="871,6,0,0" VerticalAlignment="Top" Width="73" Height="65" BorderThickness="0" Click="btn_regresar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="go_back_100px.png"/>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="106" Margin="15,395,0,-11.4" VerticalAlignment="Top" Width="157" Source="imagen_2021-10-26_231254 (1).png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-450.342"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="106" Margin="742,395,0,-11.4" VerticalAlignment="Top" Width="157" Source="imagen_2021-10-26_231254 (1).png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-450.342"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Label Content="Nuevo Cliente" HorizontalAlignment="Left" Margin="393,84,0,0" VerticalAlignment="Top" Height="44" Width="131" FontSize="18" FontFamily="Segoe UI Emoji" FontWeight="Bold"/>
+        <TextBox x:Name="txt_id_pregunta" HorizontalAlignment="Left" Height="22" Margin="118,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Visibility="Hidden"/>
+        <TextBox x:Name="txt_tipo_usu" HorizontalAlignment="Left" Height="22" Margin="660,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Visibility="Hidden"/>
+
+    </Grid>
+</Window>
